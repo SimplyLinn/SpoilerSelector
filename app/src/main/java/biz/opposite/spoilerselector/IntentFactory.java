@@ -19,8 +19,7 @@ public class IntentFactory {
                 .setType("application/*")
                 .putExtra(Intent.EXTRA_MIME_TYPES, mimetypes)
                 .addCategory(Intent.CATEGORY_OPENABLE)
-                .addCategory(Intent.CATEGORY_DEFAULT)
-                .putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true),
+                .addCategory(Intent.CATEGORY_DEFAULT),
             0);
         List<Intent> intents = new LinkedList<Intent>();
         intents.add(new Intent(Intent.ACTION_PICK)
@@ -32,7 +31,6 @@ public class IntentFactory {
             ComponentName componentName = new ComponentName(resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.name);
             intents.add(
                     new Intent(Intent.ACTION_GET_CONTENT)
-                    .putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
                     .addCategory(Intent.CATEGORY_DEFAULT)
                     .addCategory(Intent.CATEGORY_OPENABLE)
                     .setComponent(componentName)
@@ -51,8 +49,7 @@ public class IntentFactory {
     private static Intent getDriveIntent(Context context) {
         if(context == null) return null;
         List<ResolveInfo> resolveInfos = context.getPackageManager().queryIntentActivities(
-                new Intent(Intent.ACTION_PICK)
-                .putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true),
+                new Intent(Intent.ACTION_PICK),
             0);
         for(ResolveInfo resolveInfo : resolveInfos) {
             if (resolveInfo.activityInfo.name == GOOGLE_DRIVE_PACKAGE+".app.PickActivity") {
