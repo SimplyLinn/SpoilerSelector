@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        app:key="autoClearCache"
+        app:title="Enable automatic cache cleanup"
+        android:defaultValue="true"
+        />
+
+    <SeekBarPreference
+        app:key="cacheTime"
+        app:title="Cache time in minutes"
+        android:dependency="autoClearCache"
+        android:max="120"
+        android:defaultValue="60"
+        />
+
+</androidx.preference.PreferenceScreen>

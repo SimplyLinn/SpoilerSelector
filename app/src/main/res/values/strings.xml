@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Spoiler Selector</string>
+    <string name="launcherTitle">Choose an application to select Spoiler</string>
+    <string name="settingsTitle">Settings</string>
+    <string name="main_info">
+        To use this app, select it from the list of apps to fetch images from in Discord by clicking this button when attaching a file.
+    </string>
+    <plurals name="cache_info_files">
+        <item quantity="one">You have &lt;b>%d file&lt;/b> in your cache.</item>
+        <item quantity="other">You have &lt;b>%d files&lt;/b> in your cache.</item>
+    </plurals>
+    <string name="cache_info_space">The cache is using &lt;b>%d%s&lt;/b> of space.</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="screenshot_description">Image showing the location of the button you need to press within Discord</string>
+</resources>
